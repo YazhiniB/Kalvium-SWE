@@ -1,141 +1,70 @@
-# <img alt="Kalvium" src="https://kalvium.community/images/sidebar-2d-logo.svg" width="80"/> Kalvium
+# Getting Started with Create React App
 
----
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-<!-- [![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url] -->
+## Available Scripts
 
+In the project directory, you can run:
 
+### `npm start`
 
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
+### `npm test`
 
-## Table of contents : 
-<ol>
-  <li>
-    <a href="#about-the-project">About The Project</a>
-  </li>
-  <li><a href="#quick-usage">Quick Usage</a></li>
-  <li><a href="#contribution">Contribution</a>
-    <ul>    
-        <li><a href="#Prerequisites">Prerequisites</a></li>
-    </ul>
-    <ul>    
-        <li><a href="#setting-up">Setting up</a></li>
-    </ul>
-    <ul>    
-        <li><a href="#making-changes">Making Changes</a></li>
-    </ul>
-    <ul>    
-        <li><a href="#running-tests">Running Tests</a></li>
-    </ul>
-    <ul>    
-        <li><a href="#Guidelines">Guidelines</a></li>
-    </ul>
-  </li>
-  <li><a href="#license">License</a></li>
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-</ol>
+### `npm run build`
 
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-## About The Project : 
-Compilerd is a online code judge for evaluating code submissions passed to it. It compiles and executes code in several languages and returns the result and various other properties in the response. The judge supports several languages including C++, Python, C, JavaScript (Node.js) and Java. 
-This is a service that is build using nodejs and express in the backend.
-It is fully customizable and can be adjusted as per requirement. Also, it has been tried and tested on Google Cloud Run and it just works seamlessly.
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+### `npm run eject`
 
-## Quick Usage :
-We will run the project locally and try to make a request to see a sample use case :
-  - Clone the repo : ```git clone <web-url>```
-  - Change directory to the project's root folder.
-  - Install dependencies : ```npm install```
-  - Build docker image : ```docker build -t <tag> .```
-  - Run the docker container with the built image : ```docker run -p 3000:3000 -e OPENAI_API_KEY=<your-api-key> -e ALLOWED_RAM=<allowed-ram-value> <image-name>```
-  - Now we have the service running on localhost ```http://localhost:3000/```
-  - Open postman and try to make a POST request on ```http://localhost:3000/api/execute/``` with given payload :
-    ```json 
-        {
-            "language" : "nodejs", 
-            "script" : "console.log('hello world')"
-        } 
-    ```
-  - You should see something like this in the response : 
-    ```json
-        {
-            "output": "hello world\n",
-            "execute_time": null,
-            "status_code": 200,
-            "memory": null,
-            "cpu_time": null,
-            "output_files": [],
-            "compile_message": "",
-            "error": 0
-        }
-    ```
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-## Languages supported :
-  - C
-  - CPP
-  - Python
-  - Java
-  - Node.js
-  - Ruby
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-## Contribution :
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-### Prerequisites:
-For local development we should have the following dependencies set up locally in our system
-  - Nodejs : [nodejs](https://nodejs.org/en/download)
-  - Npm : this comes automatically with nodejs installation
-  - Docker : [docker](https://docs.docker.com/get-docker/)
-  - Postman or alternative : [Postman](https://www.postman.com/downloads/)
-  - Git : [Git](https://git-scm.com/downloads)
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
+## Learn More
 
-### Setting up :
-  - Fork the repository using Github UI.
-  - Clone locally from the forked repo.
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-### Making changes:
-  - Make sure to create a new branch on top of the main branch : ```git checkout -b <name>```
-  - After making changes we can commit them using ```git commit -am <commit-name>```
+To learn React, check out the [React documentation](https://reactjs.org/).
 
+### Code Splitting
 
-### Running tests : 
-  - It is important to make sure that changes are not breaking, hence they should be tested aginst provided suite of test cases in repo.
-  - Run the server in a docker container by using below commands :
-    - ```docker build -t <tag-name> .```
-    - ```docker run -p 3000:3000 -e OPENAI_API_KEY=<your-api-key> -e ALLOWED_RAM=<allowed-ram-value> <image-name>```
-  - Execute the test script by running command ```node ./tests/test.js```
-  - Summary can be seen on the console when all the tests have finished.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
+### Analyzing the Bundle Size
 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Guidelines :
- - Provide Detailed Pull Requests
-   - Clearly describe the problem you're solving or the feature you're adding
-   - Provide context, background, and any relevant information
- - Adhere to the project's coding standards and style guides
- - Update documentation as needed for your changes
-   - Ensure that your code is well-documented and easy for others to understand
- - Ensure that your contributions are well-tested
- - Maintain consistency with the existing codebase
+### Making a Progressive Web App
 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
+### Advanced Configuration
 
-<!-- LICENSE -->
-## License : 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
+### Deployment
 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
