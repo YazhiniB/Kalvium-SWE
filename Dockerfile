@@ -25,3 +25,16 @@ EXPOSE 8080
 RUN addgroup -S -g 2000 runner && adduser -S -D -u 2000 -s /sbin/nologin -h /tmp -G runner runner
 #   USER runner
 CMD sh /usr/bin/start.sh
+
+
+RUN wget https://golang.org/dl/go1.20.3.linux-amd64.tar.gz -O /tmp/go.tar.gz && \
+    tar -C /usr/local -xzf /tmp/go.tar.gz && \
+    rm /tmp/go.tar.gz
+
+
+ENV PATH="/usr/local/go/bin:${PATH}"
+
+
+RUN go version
+
+    
